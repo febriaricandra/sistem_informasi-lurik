@@ -34,7 +34,7 @@
         <div class="row">
             <div class="text-end">
                 <a class="btn btn-outline-secondary mb-2"><b>Total Bayar:</b>{{$viewData['total']}}</a>
-                <a class="btn btn-primary text-white mb-2">Beli</a>
+                <a href="{{route('form.index')}}" class="btn btn-primary text-white mb-2">Beli</a>
                 <a href="{{route('cart.delete')}}">
                     <button class="btn btn-danger mb-2">
                         Hapus Produk dalam Keranjang

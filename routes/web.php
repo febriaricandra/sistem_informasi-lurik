@@ -12,17 +12,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//display product
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/about', 'App\Http\Controllers\HomeController@about')->name("home.about");
 Route::get('/product', 'App\Http\Controllers\ProductController@index')->name("product.index");
 Route::get('/product/{id}', 'App\Http\Controllers\ProductController@show')->name("product.show");
 
+
+//keranjang shopee
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name("cart.index");
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
 Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("cart.delete");
 
+//form pembelian
+Route::get('/confirm-pembelian', 'App\Http\Controllers\FormController@index')->name("form.index");
 
+//auth middleware('admin')
 Route::middleware('admin')->group(function () {
     Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name("admin.home.index");
     Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductController@index')->name("admin.product.index");
