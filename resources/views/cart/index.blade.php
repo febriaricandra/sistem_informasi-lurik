@@ -15,6 +15,7 @@
                 <th scope="col">Bahan</th>
                 <th scope="col">Ukuran</th>
                 <th scope="col">Harga</th>
+                <th scope="col">Jumlah</th>
             </thead>
             <tbody>
                 @foreach($viewData["products"] as $product)

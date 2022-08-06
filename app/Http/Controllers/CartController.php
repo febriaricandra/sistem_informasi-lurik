@@ -10,7 +10,7 @@
             $productsInCart = [];
 
             $productsInSession = $request->session()->get('products');
-            if($productsInCart){
+            if($productsInSession){
                 $productsInCart = Product::findMany(array_keys($productsInSession));
                 $total = Product::sumByQuantities($productsInCart, $productsInSession);
             }
