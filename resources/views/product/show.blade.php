@@ -9,20 +9,20 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title fs-1 text-uppercase">
                     {{ $viewData["product"]->getNamaProduk() }}
                 </h5>
-                <h5 class="card-subtitle">Harga: (${{ $viewData["product"]->getHarga() }})</h5>
+                <h5 class="card-subtitle opacity-50">Harga: (Rp.{{ $viewData["product"]->getHarga() }})</h5>
                 <p class="card-text">Dekripsi:<br/>{{ $viewData["product"]->getKeterangan() }}</p>
-                <p class="card-text">*Bahan: {{$viewData["product"]->getBahan()}}</p>
-                <p class="card-text">*Merk: {{$viewData["product"]->getMerk()}}</p>
+                <p class="card-text">Bahan: {{$viewData["product"]->getBahan()}}</p>
+                <p class="card-text">Merk: {{$viewData["product"]->getMerk()}}</p>
                 <p class="card-text">
                     <form method="POST" action="{{route('cart.add', ['id'=>$viewData["product"]->getId()])}}">
                         <div class="row">
                             @csrf
                             <div class="col-auto">
                                 <div class="input-group col-auto">
-                                    <div class="input-group-text">Quantity</div>
+                                    <div class="input-group-text">Jumlah</div>
                                     <input type="number" min="1" max="10" class="form-control quality-input" name="quantity" value="1">
                                 </div>
                             </div>

@@ -5,7 +5,7 @@
     class HomeController extends Controller{
         public function index(){
             $viewData = [];
-            $viewData["title"] = 'Penjualan kain lurik';
+            $viewData["title"] = 'MulyaTEX';
             $viewData["subtitle"] = 'Kain lurik';
             return view('home.index')->with('viewData', $viewData);
         }

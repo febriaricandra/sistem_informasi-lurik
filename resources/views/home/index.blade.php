@@ -6,8 +6,8 @@
         <h1>Sistem Informasi Penjualan Kain Lurik</h1>
         <p>Sistem ini guna menunjang usaha kelas menengah kebawah</p>
         <div class="d-flex">
-            <button class="btn btn-primary text-white">Cek Produk</button>
-            <button class="btn">Tentang Kami</button>
+            <a class="mx-2 text-decoration-none fw-bold text-secondary" href="{{route('product.index')}}">Produk Kami</a>
+            <a class="text-decoration-none fw-bold" href="{{route('home.about')}}">Tentang Kami</a>
         </div>
     </div>
     <div class="div">

@@ -34,12 +34,14 @@
         <div class="row">
             <div class="text-end">
                 <a class="btn btn-outline-secondary mb-2"><b>Total Bayar:</b>{{$viewData['total']}}</a>
+                @if(count($viewData['products'])>0)
                 <a href="{{route('form.index')}}" class="btn btn-primary text-white mb-2">Beli</a>
                 <a href="{{route('cart.delete')}}">
                     <button class="btn btn-danger mb-2">
                         Hapus Produk dalam Keranjang
                     </button>
                 </a>
+                @endif
             </div>
         </div>
     </div>
