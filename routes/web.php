@@ -28,8 +28,8 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("
 Route::get('/confirm-pembelian', 'App\Http\Controllers\FormController@index')->name("form.index");
 Route::post('/confirm-pembelian/store', 'App\Http\Controllers\FormController@store')->name("form.store");
 
-//riwayat transaksi
-Route::get('/transaksi', 'App\Http\Controllers\TransaksiController@index')->name("transaksi.index");
+//transaksi
+
 
 //auth middleware('admin')
 Route::middleware('admin')->group(function () {
@@ -40,6 +40,7 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/products/{id}/delete', 'App\Http\Controllers\Admin\AdminProductController@delete')->name("admin.product.delete");
     Route::get('/admin/products/{id}/edit', 'App\Http\Controllers\Admin\AdminProductController@edit')->name("admin.product.edit");
     Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
+    Route::get('/admin/transaksi', 'App\Http\Controllers\Admin\AdminTransaksiController@index')->name("admin.transaksi.index");
 });
 
 

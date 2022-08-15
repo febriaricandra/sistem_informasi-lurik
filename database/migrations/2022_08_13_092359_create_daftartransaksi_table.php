@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('daftartransaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('transaksi_id');
-            $table->foreign('transaksi_id')->references('id')->on('transaksi');
+            $table->foreign('transaksi_id')->references('id')->on('transaksis');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->string('status');

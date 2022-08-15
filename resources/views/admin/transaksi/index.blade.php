@@ -16,7 +16,8 @@
                     <th scope="col">Alamat</th>
                     <th scope="col">Kota</th>
                     <th scope="col">Provinsi</th>
-                    <th scope="col">Detail Produk</th>
+                    <th scope="col">Bukti Transfer</th>
+                    <th scope="col">Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,11 +25,12 @@
                 <tr>
                     <td>{{ $transaksi->getId() }}</td>
                     <td>{{$transaksi->getNamaPembeli()}}</td>
-                    <td>{{ $transaksi->getEmailPembeli() }}</td>
-                    <td>{{$transaksi->getNomorHpPembeli()}}</td>
-                    <td>{{$transaksi->getAlamatPembeli()}}</td>
-                    <td>{{$transaksi->getKotaPembeli()}}</td>
-                    <td>{{$transaksi->getProvinsiPembeli()}}</td>
+                    <td>{{ $transaksi->getEmail() }}</td>
+                    <td>{{$transaksi->getNoHp()}}</td>
+                    <td>{{$transaksi->getAlamat()}}</td>
+                    <td>{{$transaksi->getKota()}}</td>
+                    <td>{{$transaksi->getProvinsi()}}</td>
+                    <td><img width="200px" src="{{asset('/storage/'.$transaksi->getBuktiTf())}}" alt=""></td>
                     <td>{{$transaksi->getTotal()}}</td>
                 </tr>
                 @endforeach

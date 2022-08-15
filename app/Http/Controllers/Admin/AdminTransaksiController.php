@@ -14,5 +14,10 @@
              * $transaksi = Transaksi::all();
              * return view('admin.transaksi.index', compact('transaksi'));
              */
+            $viewData = [];
+            $viewData['title'] = 'Transaksi';
+            $viewData['transaksi'] = Transaksi::all();
+            
+            return view('admin.transaksi.index')->with('viewData', $viewData);
         }
     }

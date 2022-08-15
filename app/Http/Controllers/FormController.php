@@ -4,6 +4,8 @@
     use App\Models\Transaksi;
     use App\Models\Product;
     use Illuminate\Http\Request;
+    use Illuminate\Support\Facades;
+    use Illuminate\Support\Facades\Storage;
 
     class FormController extends Controller{
         public function index(Request $request){
@@ -25,12 +27,11 @@
             Transaksi::validate($request);
             $imageName = 'safe.png';
             if($request->hasFile('bukti_tf')){
-                $imageName = $transaksi->getId().".".$request->file('bukti_tf')->extension();
+                $imageName = time().".".$request->file('bukti_tf')->extension();
                 Storage::disk('public')->put(
                     $imageName,
                     file_get_contents($request->file('bukti_tf'))
                 );
-                return $imageName;  
             } 
 
             $transaksi = new Transaksi();
@@ -41,12 +42,10 @@
             $transaksi->setEmail($request->input('email'));
             $transaksi->setBuktiTf($imageName);
             $transaksi->setTotal($request->input('total'));
-            $transaksi->setQuantity($request->input('quantity'));
+            $transaksi->setQuantity($request->input('qty'));
             $transaksi->setProvinsi($request->input('provinsi'));
             $transaksi->save(); 
 
             return back();
         }
-        //create store function with transaksi validate and image upload in laravel
-
     }
