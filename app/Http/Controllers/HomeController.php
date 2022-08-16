@@ -11,9 +11,9 @@
         }
         public function about(){
             $viewData = [];
-            $viewData["title"] = 'About us - pengembangan';
-            $viewData["subtitle"] = 'Mengenai proyek pengembangan web';
-            $viewData["description"] = 'ini tugas';
+            $viewData["title"] = 'Tentang Kami - Mulyatex';
+            $viewData["subtitle"] = 'Mulyatex lurik pedan';
+            $viewData["description"] = '---';
             $viewData["author"] = 'febriari candra guritno';
             return view('home.about')->with('viewData', $viewData);
         }

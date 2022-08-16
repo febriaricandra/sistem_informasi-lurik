@@ -2,7 +2,6 @@
 @section('title', $viewData['title'])
 @section('subtitle', $viewData['subtitle'])
 @section('content')
- 
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
