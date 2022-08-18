@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('transaksi_id');
             $table->foreign('transaksi_id')->references('id')->on('transaksis');
-            $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->string('status');
+            $table->string('status')->default('Pembelian berhasil!');
             $table->timestamps();
         });
     }

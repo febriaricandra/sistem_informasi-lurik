@@ -49,15 +49,19 @@
         @foreach ($viewData['products'] as $product)
             <div class="form-group">
                 <label>Nama Produk:</label>
-                <input type="text" class="form-control" value="{{ $product->getNamaProduk() }}" disabled>
+                <input type="text" name="nama_produk" class="form-control" value="{{ $product->getNamaProduk() }}" readonly>
             </div>
             <div class="form-group">
                 <label>Merk:</label>
-                <input type="text" class="form-control" value="{{ $product->getMerk() }}" disabled>
+                <input name="merk" type="text" class="form-control" value="{{ $product->getMerk() }}" readonly>
             </div>
             <div class="form-group">
                 <label>Ukuran:</label>
-                <input type="text" class="form-control" value="{{ $product->getUkuran() }}" disabled>
+                <input name="ukuran" type="text" class="form-control" value="{{ $product->getUkuran() }}" readonly>
+            </div>
+            <div class="form-group">
+                <label>Motif:</label>
+                <input name="motif" type="text" class="form-control" value="{{ $product->getMotif() }}" readonly>
             </div>
             <div class="form-group">
                 <label>Harga:</label>

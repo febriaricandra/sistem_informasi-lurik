@@ -35,6 +35,10 @@ class Transaksi extends Model
             "kota" => "required|string|max:255",
             "provinsi" => "required|string|max:255",
             "email" => "required|string|max:255",
+            "nama_produk" => "required|string|max:255",
+            "merk" => "required|string",
+            "ukuran" => "required|string",
+            "motif" => "required|string",
         ]);
     }
     public function getId()
@@ -124,5 +128,37 @@ class Transaksi extends Model
     public function setEmail($email)
     {
         $this->attributes["email"] = $email;
+    }
+    public function getNamaProduk()
+    {
+        return $this->attributes["nama_produk"];
+    }
+    public function setNamaProduk($nama_produk)
+    {
+        $this->attributes["nama_produk"] = $nama_produk;
+    }
+    public function getMerk()
+    {
+        return $this->attributes["merk"];
+    }
+    public function setMerk($merk)
+    {
+        $this->attributes["merk"] = $merk;
+    }
+    public function getUkuran()
+    {
+        return $this->attributes["ukuran"];
+    }
+    public function setUkuran($ukuran)
+    {
+        $this->attributes["ukuran"] = $ukuran;
+    }
+    public function getMotif()
+    {
+        return $this->attributes["motif"];
+    }
+    public function setMotif($motif)
+    {
+        $this->attributes["motif"] = $motif;
     }
 }

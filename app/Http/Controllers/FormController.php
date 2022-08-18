@@ -44,8 +44,12 @@
             $transaksi->setTotal($request->input('total'));
             $transaksi->setQuantity($request->input('qty'));
             $transaksi->setProvinsi($request->input('provinsi'));
+            $transaksi->setNamaProduk($request->input('nama_produk'));
+            $transaksi->setMerk($request->input('merk'));
+            $transaksi->setUkuran($request->input('ukuran'));
+            $transaksi->setMotif($request->input('motif'));
             $transaksi->save(); 
 
-            return back();
+            return redirect('/');
         }
     }

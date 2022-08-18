@@ -41,6 +41,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/products/{id}/edit', 'App\Http\Controllers\Admin\AdminProductController@edit')->name("admin.product.edit");
     Route::put('/admin/products/{id}/update', 'App\Http\Controllers\Admin\AdminProductController@update')->name("admin.product.update");
     Route::get('/admin/transaksi', 'App\Http\Controllers\Admin\AdminTransaksiController@index')->name("admin.transaksi.index");
+    Route::get('/admin/transaksi/{id}/detail', 'App\Http\Controllers\Admin\AdminTransaksiController@show')->name("admin.transaksi.show");
+    Route::delete('/admin/transaksi/{id}/delete', 'App\Http\Controllers\Admin\AdminTransaksiController@delete')->name("admin.transaksi.delete");
 });
 
 

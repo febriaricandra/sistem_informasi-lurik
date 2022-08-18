@@ -20,4 +20,14 @@
             
             return view('admin.transaksi.index')->with('viewData', $viewData);
         }
+        public function show($id){
+            $viewData = [];
+            $viewData['title'] = 'Transaksi';
+            $viewData['transaksi'] = Transaksi::findOrFail($id);
+            return view('admin.transaksi.show')->with('viewData', $viewData);
+        }
+        public function delete($id){
+            Transaksi::destroy($id);
+            return back();
+        }
     }
