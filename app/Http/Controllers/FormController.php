@@ -6,6 +6,7 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades;
     use Illuminate\Support\Facades\Storage;
+    use PDF;
 
     class FormController extends Controller{
         public function index(Request $request){
@@ -49,7 +50,16 @@
             $transaksi->setUkuran($request->input('ukuran'));
             $transaksi->setMotif($request->input('motif'));
             $transaksi->save(); 
-
-            return redirect('/');
+            
+            $viewData = [];
+            $viewData['transaksi'] = $transaksi;
+            return redirect('/download-pdf/')->with('viewData', $viewData);
+        }
+        public function downloadPDF(){
+            $transaksi = Transaksi::all();
+            $viewData = [];
+            $viewData['transaksi'] = $transaksi;
+            $pdf = PDF::loadView('form.pdf')->with('viewData', $viewData);
+            return $pdf->download('invoice.pdf');
         }
     }

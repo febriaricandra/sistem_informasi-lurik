@@ -27,9 +27,7 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("
 //form pembelian
 Route::get('/confirm-pembelian', 'App\Http\Controllers\FormController@index')->name("form.index");
 Route::post('/confirm-pembelian/store', 'App\Http\Controllers\FormController@store')->name("form.store");
-
-//transaksi
-
+Route::get('/download-pdf/', 'App\Http\Controllers\FormController@downloadPDF')->name("form.pdf");
 
 //auth middleware('admin')
 Route::middleware('admin')->group(function () {
