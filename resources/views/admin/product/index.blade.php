@@ -85,6 +85,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col">
+                    <div class="mb-3 row">
+                        <label class="col-lg-8 col-md-6 col-sm-12 col-form-label">Stock:</label>
+                        <div class="col-lg-10 col-md-6 col-sm-12">
+                            <input name="stock" value="{{ old('stock') }}" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Description</label>
@@ -103,6 +111,7 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Stok</th>
                     <th scope="col">Kode Produk</th>
                     <th scope="col">Name</th>
                     <th scope="col">Harga</th>
@@ -114,6 +123,7 @@
                 @foreach ($viewData["products"] as $product)
                 <tr>
                     <td>{{ $product->getId() }}</td>
+                    <td>{{ $product->getStock() }}</td>
                     <td>{{$product->getKodeProduk()}}</td>
                     <td>{{ $product->getNamaProduk() }}</td>
                     <td>{{$product->getHarga()}}</td>

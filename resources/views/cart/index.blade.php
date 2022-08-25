@@ -16,6 +16,7 @@
                 <th scope="col">Ukuran</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Jumlah</th>
+                <th scope="col">Jumlah*harga</th>
             </thead>
             <tbody>
                 @foreach($viewData["products"] as $product)
@@ -27,6 +28,7 @@
                     <td>{{$product->getUkuran()}}</td>
                     <td>{{$product->getHarga()}}</td>
                     <td>{{session('products')[$product->getId()]}}</td>
+                    <td>{{$viewData['hasil']}}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -51,9 +51,7 @@
             $transaksi->setMotif($request->input('motif'));
             $transaksi->save(); 
             
-            $viewData = [];
-            $viewData['transaksi'] = $transaksi;
-            return redirect('/download-pdf/')->with('viewData', $viewData);
+            return back();
         }
         public function downloadPDF(){
             $transaksi = Transaksi::all();

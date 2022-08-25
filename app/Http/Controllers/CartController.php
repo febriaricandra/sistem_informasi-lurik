@@ -7,16 +7,19 @@
     class CartController extends Controller{
         public function index(Request $request){
             $total = 0;
+            $hasil = 0;
             $productsInCart = [];
 
             $productsInSession = $request->session()->get('products');
             if($productsInSession){
                 $productsInCart = Product::findMany(array_keys($productsInSession));
-                $total = Product::sumByQuantities($productsInCart, $productsInSession);
+                $hasil = Product::sumByJumlah($productsInCart, $productsInSession);
+                $total = 0;
             }
             $viewData = [];
             $viewData['title'] = 'Keranjang Pembelanjaan';
             $viewData['subtitle'] = 'Daftar Produk yang dibeli';
+            $viewData['hasil'] = $hasil;
             $viewData['total'] = $total;
             $viewData['products'] = $productsInCart;
             return view('cart.index')->with("viewData", $viewData);

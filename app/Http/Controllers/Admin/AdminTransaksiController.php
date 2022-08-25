@@ -5,6 +5,7 @@
     use App\Http\Controllers\Controller;
     use Illuminate\Support\Facades\Storage;
     use Illuminate\Http\Request;
+    use PDF;
 
     class AdminTransaksiController extends Controller
     {
