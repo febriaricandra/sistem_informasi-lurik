@@ -17,6 +17,7 @@ class Product extends Model{
      * $this->attributes["ukuran"] - string - merupakan ukuran dari sebuah produk
      * $this->attributes["keterangan"] - string - merupakan keterangan dari sebuah produk
      * $this->attributes["gambar"] - string - merupakan gambar dari sebuah produk
+     * $this->attributes["stock"] - integer - merupakan stock dari sebuah produk
      */
 
     public static function validate($request){
@@ -29,6 +30,7 @@ class Product extends Model{
             "merk" => "required|string|max:255",
             "ukuran" => "required|string|max:10",
             "keterangan" => "string",
+            "stock" => "required|integer|gt:0",
             "gambar" => "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
         ]);
     }
@@ -38,6 +40,13 @@ class Product extends Model{
             $total = $total + ($product->getHarga()*$productsInSession[$product->getId()]);
         }
         return $total;
+    }
+    public static function sumByJumlah($products, $productsInSession){
+        $hasil = 0;
+        foreach($products as $product){
+            $hasil = $hasil + ($product->getHarga()*$productsInSession[$product->getId()]);
+        }
+        return $hasil;
     }
     public function getId(){
         return $this->attributes["id"];
@@ -98,5 +107,11 @@ class Product extends Model{
     }
     public function setGambar($gambar){
         $this->attributes["gambar"] = $gambar;
+    }
+    public function getStock(){
+        return $this->attributes["stock"];
+    }
+    public function setStock($stock){
+        $this->attributes["stock"] = $stock;
     }
 }

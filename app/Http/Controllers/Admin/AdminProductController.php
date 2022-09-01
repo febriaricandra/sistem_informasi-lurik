@@ -26,6 +26,7 @@
             $newProduct->setHarga($request->input('harga'));
             $newProduct->setUkuran($request->input('ukuran'));
             $newProduct->setKeterangan($request->input('keterangan'));
+            $newProduct->setStock($request->input('stock'));
             $newProduct->setGambar('safe.png');
             $newProduct->save();
 
@@ -60,6 +61,7 @@
             $product->setMerk($request->input('merk'));
             $product->setBahan($request->input('bahan'));
             $product->setHarga($request->input('harga'));
+            $product->setStock($request->input('stock'));
             $product->setUkuran($request->input('ukuran'));
             $product->setKeterangan($request->input('keterangan'));
             if($request->hasFile('gambar')){

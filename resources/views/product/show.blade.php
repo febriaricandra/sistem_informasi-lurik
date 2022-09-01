@@ -16,6 +16,7 @@
                 <p class="card-text">Dekripsi:<br/>{{ $viewData["product"]->getKeterangan() }}</p>
                 <p class="card-text">Bahan: {{$viewData["product"]->getBahan()}}</p>
                 <p class="card-text">Merk: {{$viewData["product"]->getMerk()}}</p>
+                <p class="card-text">Stok: {{$viewData["product"]->getStock()}}</p>
                 <p class="card-text">
                     <form method="POST" action="{{route('cart.add', ['id'=>$viewData["product"]->getId()])}}">
                         <div class="row">
@@ -23,7 +24,7 @@
                             <div class="col-auto">
                                 <div class="input-group col-auto">
                                     <div class="input-group-text">Jumlah</div>
-                                    <input type="number" min="1" max="10" class="form-control quality-input" name="quantity" value="1">
+                                    <input type="number" min="1" max="{{$viewData["product"]->getStock()}}" class="form-control quality-input" name="quantity" value="1">
                                 </div>
                             </div>
                             <div class="col-auto">
